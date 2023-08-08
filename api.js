@@ -21,8 +21,20 @@ const queryAPI = async (path) => {
     }
 }
 
+const fetchData = async (path) => {
+    try {
+        const response = await axios.get(API_HOST + path)
+        // console.log(response.data)
+        return response.data
+    } catch (err) {
+        console.log(err)
+        throw err
+    }
+}
+
 module.exports = {
-    queryAPI
+    queryAPI,
+    fetchData
 }
 
 // queryAPI('/api/v2/user/lvdat')
