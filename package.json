@@ -16,6 +16,9 @@
     "discord.js": "^14.12.1",
     "dotenv": "^16.3.1",
     "moment": "^2.29.4",
-    "moment-timezone": "^0.5.43"
+    "moment-timezone": "^0.5.43",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.32.1",
+    "sqlite3": "^5.1.6"
   }
 }
