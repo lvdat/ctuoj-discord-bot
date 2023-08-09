@@ -16,7 +16,7 @@ const Embed = (data) => new EmbedBuilder()
         })
     .addFields(
         {
-            name: 'Point', value: data.points.toString()
+            name: 'Point', value: data.points.toFixed(2).toString()
         })
     .addFields(
         {
