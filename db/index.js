@@ -10,10 +10,6 @@ const User = mongoose.model('User', {
         type: String,
         required: true,
     },
-    ctuoj_username: {
-        type: String,
-        // required: true,
-    },
     hash: {
         type: String,
         default: () => {
@@ -21,3 +17,18 @@ const User = mongoose.model('User', {
         },
     }
 })
+
+const Linked = mongoose.model('Linked', {
+    discord_account: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    },
+    ctuoj_username: {
+        type: String,
+    }
+})
+
+module.exports = {
+    User,
+    Linked
+}
