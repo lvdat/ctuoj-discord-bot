@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js')
 const { queryAPI } = require('../api')
+const { RankWithRating } = require('../fc')
 const moment = require('moment-timezone');
 require('moment/locale/vi');
 // console.log(fetchUser('lvdat'))
@@ -20,7 +21,7 @@ const Embed = (data) => new EmbedBuilder()
         })
     .addFields(
         {
-            name: 'Rating', value: data.rating.toString()
+            name: 'Rating', value: data.rating.toString() + ` (${RankWithRating(data.rating)})`
         })
     .setFooter({
         text: 'API v' + data.api_version + ' | Update ' + moment(data.fetched).utcOffset(gmtOffset * 60).format('HH:mm DD/MM/YYYY'),
@@ -58,9 +59,9 @@ module.exports = {
 
                 })
             })
-            .catch (err => {
+            .catch(err => {
                 console.log(err)
-            }) 
+            })
 
     }
 }
